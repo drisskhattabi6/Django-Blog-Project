@@ -2,7 +2,7 @@
 
 This repository contains a **Personel Blog** Project developed using the Django Framework.
 
-Only the **Super User** can create, edite, and delete posts, authors and category in **admin Panel** of django project.
+Only the **Super User** can create, edite, and delete posts, authors and category in **admin Pannel** (127.0.0.1:8000/admin) of django project.
 
 this is a example image of the main page of the blog : 
 
@@ -37,6 +37,12 @@ Next, you'll need to apply migrations to set up the database schema (Optionel):
 python manage.py migrate
 ```
 
+Creating Superuser:
+
+```
+python manage.py createsuperuser
+```
+
 After the migrations are applied successfully, you can start the development server:
 
 ```
@@ -44,6 +50,8 @@ python manage.py runserver
 ```
 
 The development server will start, and you can access the Blog Project by navigating to `http://127.0.0.1:8000/` in your web browser.
+
+  By default, you will find that there is data in the data base already. you can edit, create ou delete it using admin pannel after creating super user.
 
 ------
 
