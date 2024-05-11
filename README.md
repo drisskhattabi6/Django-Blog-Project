@@ -37,6 +37,12 @@ Next, you'll need to apply migrations to set up the database schema (Optionel):
 python manage.py migrate
 ```
 
+Creating static folder:
+
+```
+python manage.py collectstatic
+```
+
 Creating Superuser:
 
 ```
