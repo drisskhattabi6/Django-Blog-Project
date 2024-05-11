@@ -5,6 +5,7 @@ This repository contains a **Personel Blog** Project developed using the Django 
 Only the **Super User** can create, edite, and delete posts, authors and category in **admin Panel** of django project.
 
 this is a example image of the main page of the blog : 
+
 ![Blog Main Page](blog-img.png)
 
 The User can search for a specific topic in the blog, and he can surf a specific category of topics.
