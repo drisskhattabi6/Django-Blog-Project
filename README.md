@@ -10,9 +10,10 @@ this is a example image of the main page of the blog :
 
 The User can search for a specific topic in the blog, and he can surf a specific category of topics.
 
-# Run Project : 
 
-To download the project :
+## Run Project : 
+
+Download the project first using this cmd :
 
 ```
 git clone https://github.com/drisskhattabi6/Django-Blog-Project.git
@@ -30,7 +31,7 @@ Before running the project, make sure you have Python and Django installed on yo
 pip install -r requirements.txt
 ```
 
-Next, you'll need to apply migrations to set up the database schema:
+Next, you'll need to apply migrations to set up the database schema (Optionel):
 
 ```
 python manage.py migrate
