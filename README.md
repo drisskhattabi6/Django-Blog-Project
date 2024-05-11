@@ -2,7 +2,7 @@
 
 This repository contains a **Personel Blog** Project developed using the Django Framework.
 
-Only the **Super User** can create, edite, and delete posts, authors and category in **admin Pannel** (127.0.0.1:8000/admin) of django project.
+Only the **Super User** can create, edit, and delete posts, authors and category in **admin Pannel** ( `http://127.0.0.1:8000/admin` ) of django project.
 
 this is a example image of the main page of the blog : 
 
