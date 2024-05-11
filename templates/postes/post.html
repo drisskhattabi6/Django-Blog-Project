@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load markdown_extras %}
+
+{% block title %} {{post.title}} {% endblock title %}
+
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/css-reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myCss-fm.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post-style.css' %}">
+{% endblock links %}
+
+
+{% block content %}
+
+{% include 'header.html' %}
+
+<main class="flex-ctr-clm">
+    <div class="container flex-ctr-str">
+        <div class="post flex-str-clm">
+            <h1 class="post-title">{{post.title}}</h1>
+            <p class="categorie">Categories : 
+                {% for categorie in post.categories.all %}
+                        {{categorie.title}}, 
+                {% endfor %}
+            </p>
+            <hr width="50%">
+            <img class="thumbnail" src="{{post.thumbnail.url}}" alt="thumbnail of {{post.slug}}">
+            <div class="content">{{post.content | markdown | safe}}</div>
+
+            <div class="about-author flex-center">
+                <p><b>Wrote By : </b></p>
+                <div class="profile-img">
+                    <img src="{{post.author.profile_picture.url}}" alt="">
+                </div>
+                <p class="profile-user">{{post.author.user}}</p>
+            </div>
+
+        </div>
+        <div class="aside flex-ctr-clm">
+            <h2>Aside</h2>
+            <div class="ad-bar"></div>
+        </div>
+    </div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock scripts %}

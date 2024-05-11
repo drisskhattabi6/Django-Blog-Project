@@ -1,0 +1,32 @@
+{% load markdown_extras %}
+
+{% get_categories as category_list %}
+
+<header>
+    <div class="container flex-sp-bet">
+        <a href="{% url 'homepage' %}"><h1 class="logo">Id-Kh Blog</h1></a>
+        <nav class="nav">
+            <ul>
+                <li><a href="{% url 'homepage' %}"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li class="dropdown">
+                    <button id="dropDownBtn" class="dropbtn btn"><i class="fa-solid fa-chevron-down"></i> Categories</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        {% for categorie in category_list %}
+                            <a href="{% url 'category' categorie.slug %}">{{categorie.title}}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li><a href="{% url 'about' %}"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                <li>
+                    <form action="{% url 'search' %}" class="search-form">
+                        <div class="flex-center">
+                          <input type="text" name="q" placeholder="Search"/>
+                          <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+

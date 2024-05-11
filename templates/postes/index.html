@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Id-Kh Blog {% endblock title %}
+
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/css-reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myCss-fm.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock links %}
+
+
+{% block content %}
+
+{% include 'header.html' %}
+
+<main class="flex-ctr-clm">
+    <div class="container flex-ctr-str">
+        <div class="all-posts flex-ctr-clm">
+            {% for post in posts %}
+            <div class="post flex-ctr-str">
+                <div class="post-content flex-str-clm">
+                    <h2 class="post-title"><a href="{% url 'post' post.slug %}">{{post.title}}</a></h2>
+                    <hr width="50%">
+                    <div class="post-info flex-center">
+                        <a class="categorie">Categories : 
+                            {% for categorie in post.categories.all %}
+                            <a href="{% url 'category' categorie.slug %}">{{categorie.title}}, </a>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-user"></i> {{post.author.user}}
+                        </p>
+                    </div>
+                    <hr width="50%">
+                    <p class="overview">Overview : {{post.overview}}</p>
+                </div>
+                <div class="thumbnail">
+                    <a href="{% url 'post' post.slug %}"><img src="{{post.thumbnail.url}}" alt="thumbnail of {{post.slug}}"></a>
+                </div>
+            </div>
+            {% empty %}
+            <h1>Empty!</h1>
+            {% endfor %}
+        </div>
+        <div class="aside flex-ctr-clm">
+            <h2>Aside</h2>
+            <div class="ad-bar"></div>
+        </div>
+    </div>
+</main>
+
+{% include 'footer.html' %}
+
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock scripts %}
