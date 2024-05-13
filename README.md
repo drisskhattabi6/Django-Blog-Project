@@ -1,6 +1,6 @@
 # Django Blog Project :
 
-This repository contains a **Personel Blog** Project developed using the Django Framework.
+This repository contains a **Personal Blog** Project developed using the Django Framework.
 
 Only the **Super User** can create, edit, and delete posts, authors and category in **admin Pannel** ( `http://127.0.0.1:8000/admin` ) of django project.
 
