@@ -57,8 +57,14 @@ python manage.py runserver
 
 The development server will start, and you can access the Blog Project by navigating to `http://127.0.0.1:8000/` in your web browser.
 
-  By default, you will find that there is data in the data base already. you can edit, create ou delete it using admin pannel after creating super user.
+## More Informations :
 
+- By default, you will find that there is data in the data base already. you can edit, create ou delete it using admin pannel after creating super user.
+
+- In this Application, I'm using sqlite as DataBase.
+
+- When I want to add a new post/topic, I'm using MarkDown syntax.
+  
 ------
 
 Feel free to explore the project and customize it according to your requirements. If you encounter any issues or have any questions, don't hesitate to reach out!"
